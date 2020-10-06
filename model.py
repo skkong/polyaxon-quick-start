@@ -123,10 +123,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # TEST
-    import os
-    for root, dirs, files in os.walk('/tmp/dataset'):
-        for file in files:
-            print(file)
+    #import os
+    #for root, dirs, files in os.walk('/tmp/container_dataset1'):
+    #    for file in files:
+    #        print(file)
 
     img_width, img_height = 28, 28
 
