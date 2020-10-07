@@ -41,18 +41,21 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        '--conv1_size',
+        '--learning_rate',
+        type=float,
+        default=0.001
+    )
+    parser.add_argument(
+        '--epochs',
         type=int,
-        default=32)
+        default=10
+    )
 
     args = parser.parse_args()
 
-    # TEST
-    #import os
-    #for root, dirs, files in os.walk('/tmp/container_dataset1'):
-    #    for file in files:
-    #        print(file)
-
+    # 입력 파라미터 출력
+    print("learning_rate: ".format(args.learning_rate))
+    print("ephocs: ".format(args.ephocs))
 
     # Polyaxon
     tracking.init()
