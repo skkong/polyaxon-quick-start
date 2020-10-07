@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     # 입력 파라미터 출력
     print("learning_rate: ".format(args.learning_rate))
-    print("ephocs: ".format(args.ephocs))
+    print("epochs: ".format(args.epochs))
 
     # Polyaxon
     tracking.init()
