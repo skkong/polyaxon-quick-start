@@ -54,8 +54,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # 입력 파라미터 출력
-    print("learning_rate: ".format(args.learning_rate))
-    print("epochs: ".format(args.epochs))
+    print("learning_rate: {}".format(args.learning_rate))
+    print("epochs: {}".format(args.epochs))
 
     # Polyaxon
     tracking.init()
