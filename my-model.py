@@ -43,12 +43,12 @@ if __name__ == '__main__':
     parser.add_argument(
         '--learning_rate',
         type=float,
-        default=0.001
+        default=0.002
     )
     parser.add_argument(
         '--epochs',
         type=int,
-        default=10
+        default=20
     )
 
     args = parser.parse_args()
