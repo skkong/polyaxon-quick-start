@@ -104,5 +104,7 @@ if __name__ == '__main__':
     acc = np.sum(y_train == y_train_pred) / len(y_train)
     print('Accuracy: {}'.format(acc))
 
-
+    # polyaxon 로그 함수를 이용해서 정확도를 기록하도록 한다.
+    tracking.log_metrics(steps=2, loss=0.09, validation=0.9, accuracy=0.85)
+    
 
