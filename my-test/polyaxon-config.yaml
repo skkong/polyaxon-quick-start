@@ -1,0 +1,9 @@
+# polyaxon agent 설정 파일
+
+# 외부 스토리지에 대한 마운트 정보를 제공한다.
+connections:
+- name: dataset1
+  kind: host_path
+  schema:
+    mountPath: "/container_dataset1"
+    hostPath: "/minikube_dataset1"

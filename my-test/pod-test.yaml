@@ -1,0 +1,20 @@
+# pod를 만들어서 container 에 접근하고, 외부 스토리지가 보이는지 테스트한다.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-sleep
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    args:
+    - sleep
+    - "1000000"
+    volumeMounts:
+      - name: dataset1
+        mountPath: /container_dataset1
+  volumes:
+    - name: dataset1
+      hostPath: 
+        path: /minikube_dataset1
+        type: Directory

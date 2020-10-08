@@ -1,0 +1,14 @@
+# 하이퍼파라미터 튜닝을 위한 설정 파일
+version: 1.1
+kind: operation
+matrix:
+  kind: grid
+  params:
+    learning_rate:
+      kind: linspace
+      value: 0.001:0.1:5
+    epochs:
+      kind: choice
+      value: [10, 20]
+urlRef: https://raw.githubusercontent.com/skkong/polyaxon-quick-start/master/experimentation/my-typed.yml
+

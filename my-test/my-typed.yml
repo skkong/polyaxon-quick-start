@@ -1,0 +1,26 @@
+version: 1.1
+kind: component
+name: hyper-parameter
+description: Minimum information to run this TF.Keras example
+tags: [examples]
+
+# 하이퍼파라미터 튜닝을 위한 입력, 출력값 설정
+inputs:
+- {name: learning_rate, type: float, value: 0.001, isOptional: true}
+- {name: epochs, type: int, value: 10, isOptional: true}
+outputs:
+- {name: loss, type: float}
+- {name: validation, type: float}
+
+run:
+  kind: job
+  connections: [dataset1]
+  init:
+  - git: {url: "https://github.com/skkong/polyaxon-quick-start"}
+  container:
+    image: polyaxon/polyaxon-quick-start
+    workingDir: "{{ globals.artifacts_path }}/polyaxon-quick-start"
+    #command: [python3, my-model.py]
+    command: ["/bin/sh", "-c"]
+    args: ["pip install pyod seaborn; python3 my-model.py --learning_rate={{ learning_rate}} --epochs={{ epochs }}"]
+
